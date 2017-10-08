@@ -40,34 +40,45 @@
         <form class="form-inline">
           <div class="form-group">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="ENTER ITEM CODE HERE">
+              <input type='text' [value]="selectedHero" #heroName/>
             </div>
           </div>
-          <button type="button" class="btn btn-primary active">ENTER ITEM</button>
+          <button type="button" class="btn btn-primary active" (click)="onClickItem(heroName.value)">ENTER ITEM</button>
         </form>
 
 
 
       </div>
       <div class="row">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>ITEM CODE</th>
-              <th>ITEM NAME</th>
-              <th>ITEM WEIGHT</th>
-              <th>ITEM PRICE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>B235</td>
-              <td>DHAL</td>
-              <td>1 KG</td>
-              <td>150LKR</td>
-            </tr>
-          </tbody>
-        </table>
+        <mat-table #table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="code">
+      <mat-header-cell *matHeaderCellDef> Barcode </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Item Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
       </div>
     </div>
 
