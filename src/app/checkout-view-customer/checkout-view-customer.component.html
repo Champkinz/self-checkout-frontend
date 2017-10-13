@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            HELP
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-xs-4 col-sm-4">
+            <mat-card>Simple card</mat-card>
+            <mat-card>Simple card</mat-card>
+            <mat-card>Simple card</mat-card>
+        </div>
+        <div class="col-md-8 col-xs-8 col-sm-8">
+            <mat-table #table [dataSource]="dataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="code">
+                    <mat-header-cell *matHeaderCellDef> Barcode </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef> Item Name </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="price">
+                    <mat-header-cell *matHeaderCellDef> Price-LKR </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+                </ng-container>
+
+                <!-- Color Column -->
+                <ng-container matColumnDef="weight">
+                    <mat-header-cell *matHeaderCellDef> Weight-LKR </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+        </div>
+    </div>
+    <button mat-button>CHECK-OUT</button>
+    
+
+</div>
