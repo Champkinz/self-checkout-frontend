@@ -1,16 +1,4 @@
-mat-grid-tile {
-    background: lightblue;
-  }
-
-  .example-container {
-    display: flex;
-    flex-direction: column;
-    max-height: 500px;
-    min-width: 300px;
-  }
-  
-  .mat-table {
-    overflow: auto;
-    max-height: 500px;
-  }
-  
+.gap
+{
+  margin-top: 50%;
+}
