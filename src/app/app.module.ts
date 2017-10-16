@@ -4,10 +4,10 @@ import 'hammerjs';
 import { CheckoutViewCustomerComponent } from './checkout-view-customer/checkout-view-customer.component';
 import { AppComponent } from './app.component';
 import { CheckoutViewComponent } from './checkout-view/checkout-view.component';
-import { AppRoutingModule } from "./app-routing.module";
+import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import { CheckoutViewModule } from "./checkout-view/checkout-view.module";
+import {CheckoutViewModule} from "./checkout-view/checkout-view.module";
 import { LoginCustomerViewComponent } from './login-customer-view/login-customer-view.component';
 import { LoginAdminViewComponent } from './login-admin-view/login-admin-view.component';
 import {MatFormFieldModule} from '@angular/material';
@@ -25,7 +25,6 @@ import {MatToolbarModule} from '@angular/material';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import {MatSidenavModule} from '@angular/material';
 import { SmthComponent } from './smth/smth.component';
-
 
 
 @NgModule({
@@ -56,7 +55,7 @@ import { SmthComponent } from './smth/smth.component';
     MatCheckboxModule,
     CheckoutViewModule,
     MatToolbarModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
