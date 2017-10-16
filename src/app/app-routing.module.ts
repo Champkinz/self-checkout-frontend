@@ -5,14 +5,16 @@ import { LoginCustomerViewComponent } from './login-customer-view/login-customer
 import {RouterModule, Routes} from '@angular/router';
 import { CheckoutViewCustomerComponent } from './checkout-view-customer/checkout-view-customer.component';
 import { LoginAdminViewComponent } from './login-admin-view/login-admin-view.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: '', component: LoginCustomerViewComponent},
-  {path: 'checkouts', component: CheckoutViewComponent},
+  {path: 'checkouts', component: CheckoutViewComponent},// remove at end of product
   {path: 'adminlog', component: LoginAdminViewComponent},
+  {path: 'admin', component: AdminViewComponent},// remove at end of product
   {path: 'checkout', component: CheckoutViewCustomerComponent}, // remove at end of product
 
 

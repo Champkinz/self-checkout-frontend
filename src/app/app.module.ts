@@ -21,12 +21,10 @@ import {MatTableModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
-
-
-
-
-
 import {MatToolbarModule} from '@angular/material';
+import { AdminViewComponent } from './admin-view/admin-view.component';
+import {MatSidenavModule} from '@angular/material';
+import { SmthComponent } from './smth/smth.component';
 
 
 
@@ -35,9 +33,12 @@ import {MatToolbarModule} from '@angular/material';
     AppComponent,
     LoginCustomerViewComponent,
     CheckoutViewCustomerComponent,
-    LoginAdminViewComponent
+    LoginAdminViewComponent,
+    AdminViewComponent,
+    SmthComponent
 ],
   imports: [
+    MatSidenavModule,
     BrowserModule,
     CdkTableModule,
     FlexLayoutModule,
