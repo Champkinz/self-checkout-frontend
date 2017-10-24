@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import 'hammerjs';
 import { CheckoutViewCustomerComponent } from './checkout-view-customer/checkout-view-customer.component';
@@ -25,6 +26,7 @@ import {MatToolbarModule} from '@angular/material';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import {MatSidenavModule} from '@angular/material';
 import { SmthComponent } from './smth/smth.component';
+import { BillRecieptComponent } from './bill-reciept/bill-reciept.component';
 
 
 @NgModule({
@@ -34,9 +36,11 @@ import { SmthComponent } from './smth/smth.component';
     CheckoutViewCustomerComponent,
     LoginAdminViewComponent,
     AdminViewComponent,
-    SmthComponent
+    SmthComponent,
+    BillRecieptComponent
 ],
   imports: [
+      FormsModule,
     MatSidenavModule,
     BrowserModule,
     CdkTableModule,

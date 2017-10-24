@@ -1,12 +1,18 @@
+body {
+    background:#F6F6F6 !important;
+    padding: 2em 23em !important;
+}
+
 .gap
 {
     margin-top: 15%;
 }
 
-.example-form {
+.example-form{
     min-width: 150px;
+    max-width: 500px;
     width: 100%;
-  }
+}
   
   .example-full-width {
     width: 100%;

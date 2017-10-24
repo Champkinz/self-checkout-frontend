@@ -1,17 +1,16 @@
-<mat-card class="gap">
-        <mat-card-title> Administration Login</mat-card-title>
-    <div class="container" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+    <div class="container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card class="gap">
 
-        <div class="example-form">
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="UserID">
-            </mat-form-field>
-        </div>
-        <div class="example-form">
-            <mat-form-field class="example-full-width">
-                <input type="password" matInput placeholder="Password">
-            </mat-form-field>
+        <mat-card-title> Administration Login</mat-card-title>
+
+        <form (submit)="loginAdmin($event)" class="example-form">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="UserID">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input type="password" matInput placeholder="Password">
+        </mat-form-field>
         <button mat-raised-button color="accent">LOGIN</button>
-        </div>
+</form>
+        </mat-card>
     </div>
-</mat-card>

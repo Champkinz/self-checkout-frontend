@@ -5,6 +5,13 @@
 <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px">
     <div style="background-color: purple;color: white;" fxFlex.lg="30" fxFlex.xs="30" fxFlex.sm="30">Image place holder</div>
     <div style="background-color:black;color: white;" fxFlex.lg="70" fxFlex.xs="70" fxFlex.sm="70">
+        <form (submit)="onClickItem(heroName.value)">
+            <mat-form-field>
+                <input matInput type='text' placeholder="EnterItemCode" autofocus="autofocus" [value]="selectedHero" #heroName/>
+                <button style="display: none;" type="button" class="btn btn-primary active">ENTER ITEM</button>
+            </mat-form-field>
+
+        </form>
         <mat-table #table [dataSource]="dataSource">
 
             <!-- Position Column -->

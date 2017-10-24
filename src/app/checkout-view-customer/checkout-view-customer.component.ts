@@ -10,9 +10,16 @@ import 'rxjs/add/observable/of';
 })
 export class CheckoutViewCustomerComponent implements OnInit {
 
+
   displayedColumns = ['code', 'name', 'price', 'weight'];
   dataSource = new ExampleDataSource();
   itemData = [
+      {
+          code: "9781909865068",
+          name: "TEST",
+          price: "112.00",
+          weight: "1Kg"
+      },
   {
 		code: "A123",
 		name: "Sugar",

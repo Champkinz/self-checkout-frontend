@@ -1,4 +1,10 @@
+
+body {
+  background:#F6F6F6 !important;
+  padding: 2em 23em !important;
+}
+
 .gap
 {
-  margin-top: 50%;
+  margin-top: 10%;
 }
