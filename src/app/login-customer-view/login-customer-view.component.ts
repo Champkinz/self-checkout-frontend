@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 })
 export class LoginCustomerViewComponent implements OnInit {
 
+
   constructor(private  router:Router) { }
 
   ngOnInit() {
@@ -18,9 +19,10 @@ export class LoginCustomerViewComponent implements OnInit {
     console.log(e);
     var phonenumber = e.target.elements[0].value;
     console.log(phonenumber);
-    if (phonenumber == '9781909865068') {
+    if(phonenumber == '9781909865068') {
       this.router.navigate(['checkout']);
     }
   }
+
 
 }

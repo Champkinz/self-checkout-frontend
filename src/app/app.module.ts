@@ -26,7 +26,9 @@ import {MatToolbarModule} from '@angular/material';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import {MatSidenavModule} from '@angular/material';
 import { SmthComponent } from './smth/smth.component';
-import { BillRecieptComponent } from './bill-reciept/bill-reciept.component';
+import { BillRecieptComponent } from './bill-reciept/bill-reciept.component'
+import { BillService } from './bill-reciept/bill.service';
+import {HttpModule} from "@angular/http";
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { BillRecieptComponent } from './bill-reciept/bill-reciept.component';
 ],
   imports: [
       FormsModule,
+      HttpModule,
     MatSidenavModule,
     BrowserModule,
     CdkTableModule,
@@ -61,7 +64,7 @@ import { BillRecieptComponent } from './bill-reciept/bill-reciept.component';
     MatToolbarModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [BillService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,10 @@
 <p>
-  bill-reciept works!
+  {{name}}
 </p>
+
+<input type="text" [(ngModel)]="name" name="name">
+
+<div *ngFor="let posts of posts">
+  <h4>{{posts.title}}</h4>
+  <p>{{posts.body}}</p>
+</div>

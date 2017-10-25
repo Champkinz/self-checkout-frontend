@@ -35,7 +35,8 @@
             <!-- Color Column -->
             <ng-container matColumnDef="weight">
                 <mat-header-cell *matHeaderCellDef> Weight-LKR </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.weight}}<button (click)="deleteitem(element.code)">X</button>
+                </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
