@@ -1,13 +1,16 @@
-<div class="container gap" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px"><h1>ENTER TELEPHONE</h1></div>
+<div class="container gap" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px"><h1>ENTER TELEPHONE</h1>
+</div>
 <div class="container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-  <form (submit)="loginUser($event)" class="example-form">
-    <mat-form-field class="example-full-width">
-      <span matPrefix>+94 &nbsp;</span>
-      <input type="text" autofocus="autofocus" matInput placeholder="Telephone">
-    </mat-form-field>
-    <button mat-raised-button color="accent">LOGIN</button>
-  </form>
-  <!--<div *ngFor="let userdetes of userdetes">-->
+    <form (submit)="loginUser($event)" class="example-form">
+        <mat-form-field class="example-full-width">
+            <span matPrefix>+94 &nbsp;</span>
+            <input type="text" autofocus="autofocus" matInput placeholder="Telephone">
+        </mat-form-field>
+            <h4 class="redfn">{{errorphone}}</h4>
+        <button mat-raised-button color="accent">LOGIN</button>
+    </form>
+    <!--<div *ngFor="let userdetes of userdetes">-->
     <!--<h4>{{userdetes.name}}</h4>-->
-  <!--</div>-->
+    <!--</div>-->
+
 </div>

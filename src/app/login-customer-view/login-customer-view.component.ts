@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {LoginServiceService} from '../services/login-service.service';
 import {isEmpty} from "rxjs/operator/isEmpty";
 import {isNullOrUndefined, isUndefined} from "util";
+import {errorObject} from "rxjs/util/errorObject";
 
 @Component({
     selector: 'app-login-customer-view',
@@ -10,8 +11,9 @@ import {isNullOrUndefined, isUndefined} from "util";
     styleUrls: ['./login-customer-view.component.css']
 })
 export class LoginCustomerViewComponent implements OnInit {
-
     userdetes:userdetails[];
+
+    errorphone:string;
 
     constructor(private  router: Router, private  loginService:LoginServiceService) {
     }
@@ -37,6 +39,7 @@ export class LoginCustomerViewComponent implements OnInit {
             this.userdetes = users;console.log('down');console.log(this.userdetes);
             if (this.userdetes.length === 0) {
                 console.log('NO NUMBER FOUND');
+                this.errorphone = 'Please Re-Enter The Phone Number';
             }else {
                 console.log('loginarea');
                 console.log(this.userdetes);

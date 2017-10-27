@@ -4,7 +4,7 @@ body {
 }
 
 input{
-    color: white;
+    color: black;
 }
 
 .example-form {
@@ -20,4 +20,8 @@ input{
 .gap
 {
   margin-top: 15%;
+}
+
+.redfn{
+  color:red;
 }
