@@ -7,28 +7,26 @@ import {BillService} from './bill.service';
     styleUrls: ['./bill-reciept.component.css']
 })
 export class BillRecieptComponent implements OnInit {
-    g:number;
-    posts:Post[];
+    g: number;
+    posts: Post[];
+    name='smyh';
 
-    constructor(private billserivce: BillService) {
+    constructor(private billserivce: BillService,) {
     }
 
     ngOnInit() {
 
         this.g = 1;
         this.billserivce.getPost(this.g).subscribe((posts) => {
-            this.posts = posts;console.log(posts)
+            this.posts = posts;
+            console.log(posts);
         });
     }
-
-    name = "smth";
-
 }
 
-interface Post
-{
-    userId:number,
-    id:number,
-    title:string,
-    body:string
+interface Post {
+    userId: number,
+    id: number,
+    title: string,
+    body: string
 }
