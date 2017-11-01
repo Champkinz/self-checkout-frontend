@@ -27,12 +27,12 @@ export class AdminConfigComponent implements OnInit {
     weightTolerate(e) {
         e.preventDefault();
 
-        type WT = Array<{minValue: string, minTolerateValue: string,maxValue: string,maxTolerateValue: string,}>;
+        type WT = Array<{minWeight: string, minWeightTolerance: string,maxWeight: string,maxWeightTolerance: string,}>;
         var arr: WT = [
-            {minValue: e.target.elements[0].value,
-                minTolerateValue: e.target.elements[1].value,
-                maxValue: e.target.elements[2].value,
-                maxTolerateValue: e.target.elements[3].value },
+            {minWeight: e.target.elements[0].value,
+                minWeightTolerance: e.target.elements[1].value,
+                maxWeight: e.target.elements[2].value,
+                maxWeightTolerance: e.target.elements[3].value },
         ];
         this.weightTldata = arr;
         console.log(this.weightTldata);

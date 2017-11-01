@@ -1,6 +1,6 @@
 export class weightTolerate{
-    minValue:string;
-    minTolerateValue:string;
-    maxValue:string;
-    maxTolerateValue:string;
+    minWeight:string;
+    minWeightTolerance:string;
+    maxWeight:string;
+    maxWeightTolerance:string;
 }

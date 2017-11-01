@@ -36,22 +36,37 @@ export class WeightScaleComponent implements OnInit {
             var finalweight=this.weightType.slice(0,-1);
             var fnl = +finalweight;
         }
-
+        var weightscalevalue = fnl;
+        var actualweight = +localStorage.getItem('totalweight');
+        console.log('locawight'+actualweight);
+        var minweight;
+        var mintolweight;
+        var maxweight;
+        var maxtolweight;
         this.weighttol.getWeightTolerance().subscribe((weight) => {
-            this.weighttolrnc = weight;console.log(this.weighttolrnc);
+            this.weighttolrnc = weight;console.log(this.weighttolrnc[0].minWeight);
+            minweight = this.weighttolrnc[0].minWeight;
+            mintolweight = this.weighttolrnc[0].minWeightTolerance;
+            maxweight = this.weighttolrnc[0].maxWeight;
+            maxtolweight = this.weighttolrnc[0].maxWeightTolerance;
+            console.log('this ran');
+            this.checktolerance(minweight,maxweight,maxtolweight,mintolweight,weightscalevalue,actualweight);
         });
+        console.log(minweight);
+
+
+
         // console.log(this.ll);
     }
 
-    checktolerance(e){
+    checktolerance(minwg,maxwg,maxtolwg,minwtolwg,wgsclvl,actwg){
 
-        e.preventDefault();
-        var minWeight = 50;
-        var maxWeight = 10000;
-        var maxTolerateWeight = 100;
-        var minTolerateWeight = 10;
-        var maxvaltake = e.target.elements[0].value;
-        var actualweight = 923;
+        var minWeight = minwg;
+        var maxWeight = maxwg;
+        var maxTolerateWeight = maxtolwg;
+        var minTolerateWeight = minwtolwg;
+        var maxvaltake = wgsclvl;
+        var actualweight = actwg;
 
         var steps = maxWeight/minWeight;
         console.log('steps: '+steps);
@@ -65,22 +80,25 @@ export class WeightScaleComponent implements OnInit {
         tolerateweightforthegivenrange = tolerateweightforthegivenrange + minTolerateWeight;
         tolerateweightforthegivenrange = Math.round(tolerateweightforthegivenrange);
         console.log('toleraterateforgvnamnt: '+ (tolerateweightforthegivenrange));
-        var findperforgvnrange = tolerateweightforthegivenrange/givenrangemaxval * 100;
-
-
-
-        // testing purposes
-        findperforgvnrange = Math.round(findperforgvnrange);
-        console.log(findperforgvnrange);
-        var testamount = actualweight * findperforgvnrange / 100;
-        testamount = Math.round(testamount);
-        console.log(testamount);
-
-        if(maxvaltake <= (actualweight+tolerateweightforthegivenrange)){
+        console.log('actualweight'+actualweight);
+        var t = actualweight + tolerateweightforthegivenrange;
+        console.log('this is t'+t);
+        console.log('this is maxvaltake'+maxvaltake);
+        if(maxvaltake <= t) {
             this.router.navigate(['bill']);
         }else {
             this.helpcustomer = 'wait for assistant help';
         }
+        // var findperforgvnrange = tolerateweightforthegivenrange/givenrangemaxval * 100;
+        // testing purposes
+        // findperforgvnrange = Math.round(findperforgvnrange);
+        // console.log(findperforgvnrange);
+        // var testamount = actualweight * findperforgvnrange / 100;
+        // testamount = Math.round(testamount);
+        // console.log(testamount);
+        // console.log('this1'+t);
+        // console.log('this2'+maxvaltake);
+
     }
 
     clearStorage() {

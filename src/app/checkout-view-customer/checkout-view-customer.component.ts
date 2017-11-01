@@ -59,7 +59,7 @@ export class CheckoutViewCustomerComponent implements OnInit {
 
 
     gotoWeight() {
-        var x;
+        var x =0;
         for(let res of data){
                 if (res.weight[res.weight.length-2] == 'k'){
                     var finalweight=res.weight.slice(0,-2);
@@ -68,8 +68,9 @@ export class CheckoutViewCustomerComponent implements OnInit {
                     var finalweight=res.weight.slice(0,-1);
                     var fnl = +finalweight;
                 }
-                x= x + fnl;
+                x+=fnl;
         }
+        localStorage.setItem('totalweight',x.toString());
         console.log(x);
 
         var today:any = new Date();
