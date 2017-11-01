@@ -24,11 +24,6 @@ export class BillRecieptComponent implements OnInit {
         this.products = JSON.parse(localStorage.getItem('checkoutorder'));
         console.log('BILL'+JSON.stringify(this.products));
 
-        this.g = 1;
-        this.billserivce.getPost(this.g).subscribe((posts) => {
-            this.posts = posts;
-            console.log(posts);
-        });
     }
 }
 

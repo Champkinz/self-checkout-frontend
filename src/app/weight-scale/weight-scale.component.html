@@ -1,14 +1,16 @@
 <!--<p>-->
-  <!--weight-scale works!<button (click)="clearStorage()" >X</button>-->
+<!--weight-scale works!<button (click)="clearStorage()" >X</button>-->
 <!--</p>-->
 <div fxFlex="100%" fxLayoutAlign="center center">
-  <form (submit)="checktolerance($event)">
-    <mat-form-field>
-      <input matInput type='text' placeholder="Enter Scale Weight"  autofocus="autofocus" >
-      <button style="display: none;" type="button" class="btn btn-primary active">ENTER ITEM</button>
-    </mat-form-field>
-  </form>
-  <!--<button (click)="checktolerance()">PRESS</button>-->
+    <form (submit)="checktolerance($event)">
+        <mat-form-field>
+            <input matInput type='text' placeholder="Enter Scale Weight" autofocus="autofocus">
+            <button style="display: none;" type="button" class="btn btn-primary active">ENTER ITEM</button>
+        </mat-form-field>
+    </form>
+    <div>
+        <h1>{{helpcustomer}}</h1>
+    </div>
 </div>
 
 
