@@ -7,6 +7,7 @@ import {CheckoutViewCustomerComponent} from './checkout-view-customer/checkout-v
 import {LoginAdminViewComponent} from './login-admin-view/login-admin-view.component';
 import {AdminViewComponent} from './admin-view/admin-view.component';
 import {BillRecieptComponent} from './bill-reciept/bill-reciept.component';
+import { WeightScaleComponent } from './weight-scale/weight-scale.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path: 'adminlog', component: LoginAdminViewComponent},
     {path: 'admin', component: AdminViewComponent},// remove at end of product
     {path: 'bill', component: BillRecieptComponent},// remove at end of product
+    {path: 'weight', component: WeightScaleComponent},// remove at end of product
     {path: 'checkout', component: CheckoutViewCustomerComponent}, // remove at end of product
 
 

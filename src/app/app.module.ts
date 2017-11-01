@@ -26,10 +26,15 @@ import {MatToolbarModule} from '@angular/material';
 import {AdminViewComponent} from './admin-view/admin-view.component';
 import {MatSidenavModule} from '@angular/material';
 import {SmthComponent} from './smth/smth.component';
-import {BillRecieptComponent} from './bill-reciept/bill-reciept.component'
+import {BillRecieptComponent} from './bill-reciept/bill-reciept.component';
 import {BillService} from './bill-reciept/bill.service';
 import {HttpModule} from '@angular/http';
 import {LoginServiceService} from './services/login-service.service';
+import {CheckoutService} from './services/checkout.service';
+import { WeightScaleComponent } from './weight-scale/weight-scale.component';
+import {MatTabsModule} from '@angular/material';
+import { AdminConfigComponent } from './admin-config/admin-config.component';
+import {WeightTolerateService} from "./services/weight-tolerate.service";
 
 
 @NgModule({
@@ -40,10 +45,12 @@ import {LoginServiceService} from './services/login-service.service';
         LoginAdminViewComponent,
         AdminViewComponent,
         SmthComponent,
-        BillRecieptComponent
+        BillRecieptComponent,
+        WeightScaleComponent,
+        AdminConfigComponent
     ],
     imports: [
-
+        MatTabsModule,
         FormsModule,
         HttpModule,
         MatSidenavModule,
@@ -66,7 +73,7 @@ import {LoginServiceService} from './services/login-service.service';
         MatToolbarModule,
         AppRoutingModule,
     ],
-    providers: [BillService,LoginServiceService],
+    providers: [BillService,LoginServiceService,CheckoutService,WeightTolerateService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

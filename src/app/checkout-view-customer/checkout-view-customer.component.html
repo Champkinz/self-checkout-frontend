@@ -1,50 +1,52 @@
 <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end start" fxLayoutGap="10px">
-    HELP
+    <button (click)="checkObject()">CHECK ARRAY</button>
 </div>
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px">
+        <div style="background-color: purple;color: white;" fxFlex.lg="30" fxFlex.xs="30" fxFlex.sm="30">Image place
+            holder
+        </div>
+        <div style="background-color:black;color: white;" fxFlex.lg="70" fxFlex.xs="70" fxFlex.sm="70">
+            <form (submit)="onClickItem($event)">
+                <mat-form-field>
+                    <input matInput type='text' placeholder="Enter Barcode Item"  autofocus="autofocus" >
+                    <button style="display: none;" type="button" class="btn btn-primary active">ENTER ITEM</button>
+                </mat-form-field>
 
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px">
-    <div style="background-color: purple;color: white;" fxFlex.lg="30" fxFlex.xs="30" fxFlex.sm="30">Image place holder</div>
-    <div style="background-color:black;color: white;" fxFlex.lg="70" fxFlex.xs="70" fxFlex.sm="70">
-        <form (submit)="onClickItem(heroName.value)">
-            <mat-form-field>
-                <input matInput type='text' placeholder="EnterItemCode" autofocus="autofocus" [value]="selectedHero" #heroName/>
-                <button style="display: none;" type="button" class="btn btn-primary active">ENTER ITEM</button>
-            </mat-form-field>
+            </form>
+            <mat-table #table [dataSource]="dataSource">
 
-        </form>
-        <mat-table #table [dataSource]="dataSource">
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef> Barcode </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
+                </ng-container>
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="code">
-                <mat-header-cell *matHeaderCellDef> Barcode </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
-            </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef> Item Name </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Item Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-            </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="username">
+                    <mat-header-cell *matHeaderCellDef> Price-LKR </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+                </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="price">
-                <mat-header-cell *matHeaderCellDef> Price-LKR </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
-            </ng-container>
+                <!-- Color Column -->
+                <ng-container matColumnDef="phone">
+                    <mat-header-cell *matHeaderCellDef> Weight-LKR </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.price}}<button (click)="deleteitem(element.code)">X</button>
+                    </mat-cell>
+                </ng-container>
 
-            <!-- Color Column -->
-            <ng-container matColumnDef="weight">
-                <mat-header-cell *matHeaderCellDef> Weight-LKR </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.weight}}<button (click)="deleteitem(element.code)">X</button>
-                </mat-cell>
-            </ng-container>
-
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+        </div>
     </div>
-</div>
+
 
 <div class="container gap" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center end" fxLayoutGap="10px">
-    <button mat-raised-button color="accent">CHECKOUT</button>
+    <button (click)="gotoWeight()" mat-raised-button color="accent">CHECKOUT</button>
 </div>

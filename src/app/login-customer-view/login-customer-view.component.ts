@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {LoginServiceService} from '../services/login-service.service';
-import {isEmpty} from "rxjs/operator/isEmpty";
-import {isNullOrUndefined, isUndefined} from "util";
-import {errorObject} from "rxjs/util/errorObject";
+import {userdetails} from '../data/user';
+
 
 @Component({
     selector: 'app-login-customer-view',
@@ -14,6 +13,7 @@ export class LoginCustomerViewComponent implements OnInit {
     userdetes:userdetails[];
 
     errorphone:string;
+
 
     constructor(private  router: Router, private  loginService:LoginServiceService) {
     }
@@ -41,24 +41,23 @@ export class LoginCustomerViewComponent implements OnInit {
                 console.log('NO NUMBER FOUND');
                 this.errorphone = 'Please Re-Enter The Phone Number';
             }else {
+                let val:string;
+                val = users[0].phone;
                 console.log('loginarea');
-                console.log(this.userdetes);
+                console.log(val);
+                localStorage.setItem("phonenumber",val);
                 this.router.navigate(['checkout']);
             }
         });
-
-
-
-
-
-
     }
 
 
+
+
 }
 
-interface userdetails{
-    id:string,
-    name:string,
-    phone:string
-}
+// interface userdetails{
+//     id:string,
+//     name:string,
+//     phone:string
+// }

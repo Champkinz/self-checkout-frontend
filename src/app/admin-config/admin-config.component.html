@@ -1,0 +1,57 @@
+<div class="example-container" fxFlex="100%">
+    <div fxLayout="column">
+        <mat-card>
+            <form (submit)="setShopname($event)">
+                <mat-toolbar>
+                    <mat-card-header>
+                        Enter Shop Name
+                    </mat-card-header>
+                </mat-toolbar>
+
+                <div class="input-container">
+                    <mat-form-field>
+                        <input matInput placeholder="Input Shop Name" name="shopname">
+                    </mat-form-field>
+                    <button mat-raised-button color="accent">PRESS</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+    <div fxLayout="column">
+        <mat-card>
+            <form (submit)="weightTolerate($event)">
+                <mat-toolbar>
+                    <mat-card-header>
+                        Weighing Scale Tolerate Weight Messure
+                    </mat-card-header>
+                </mat-toolbar>
+
+                <div class="input-container">
+                    <mat-form-field>
+                        <input matInput placeholder="Input Minimum Value">
+                    </mat-form-field>
+                </div>
+
+                <div class="input-container">
+                    <mat-form-field>
+                        <input matInput placeholder="Input Minimum Value Tolerate">
+                    </mat-form-field>
+                </div>
+                <div class="input-container">
+                    <mat-form-field>
+                        <input matInput placeholder="Input Maximum Value">
+                    </mat-form-field>
+                </div>
+
+                <div class="input-container">
+                    <mat-form-field>
+                        <input matInput placeholder="Input Maximum Value Tolerate">
+                    </mat-form-field>
+                    <div>
+                        <button mat-raised-button color="accent">PRESS</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

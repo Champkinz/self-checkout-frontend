@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BillService} from './bill.service';
+import {Product} from "../data/product";
 
 @Component({
     selector: 'app-bill-reciept',
@@ -10,11 +11,18 @@ export class BillRecieptComponent implements OnInit {
     g: number;
     posts: Post[];
     name='smyh';
+    products:Product[];
+    phonenumber:string;
 
     constructor(private billserivce: BillService,) {
     }
 
     ngOnInit() {
+        console.log('phone:'+localStorage.getItem('phonenumber'));
+        // console.log('checkout:'+localStorage.getItem('checkoutorder'));
+        this.phonenumber = localStorage.getItem('phonenumber');
+        this.products = JSON.parse(localStorage.getItem('checkoutorder'));
+        console.log('BILL'+JSON.stringify(this.products));
 
         this.g = 1;
         this.billserivce.getPost(this.g).subscribe((posts) => {

@@ -1,33 +1,50 @@
-<div>
-    <div fxLayout="row" fxLayout.xs="column">
-        <div class="navbarr" fxFlex="25%" fxShow.xs="false"
-             fxShow.lg="true">
-            <div fxLayout="column"
-
-                 fxFill>
-                <mat-toolbar class="mat-primary navbtn"><a routerLink="/checkout">test</a></mat-toolbar>
-                <button mat-button>RE-STOCK</button>
-                <button mat-button>FUNCTION 2</button>
-                <button mat-button>FUNCTION 3</button>
-            </div>
-        </div>
-        <div class="navbarr2" fxFlex="25%" fxShow.xs="true"
-             fxShow.lg="false">
-            <div fxLayout="column"
-                 fxFill>
-                <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-                <mat-menu #menu="matMenu">
-
-                    <button  mat-menu-item>RE-STOCK</button>
-                    <button mat-menu-item>FUNCTION 2</button>
-                    <button mat-menu-item>FUNCTION 3</button>
-                </mat-menu>
-            </div>
-        </div>
-
-        <div fxFlex="75%">
-            <app-checkout-view-customer></app-checkout-view-customer>
-        </div>
+<div fxLayout="column">
+    <div fxFlex="100%" fxLayoutAlign="center center">
+        <h2>{{shopname}}</h2>
     </div>
 
+    <div fxFlex="100%">
+        <mat-tab-group>
+            <mat-tab fxLayout="row" label="Tab 1"><app-admin-config></app-admin-config></mat-tab>
+            <mat-tab fxLayout="row" label="Tab 2"><app-checkout-view-customer></app-checkout-view-customer></mat-tab>
+        </mat-tab-group>
+
+
+        <!--<div fxLayout="row" fxLayout.xs="column">-->
+        <!--<div class="navbarr" fxFlex="25%" fxShow.xs="false"-->
+        <!--fxShow.lg="true">-->
+        <!--<div fxLayout="column"-->
+
+        <!--fxFill>-->
+        <!--<mat-toolbar class="mat-primary navbtn"><a routerLink="/checkout">test</a></mat-toolbar>-->
+        <!--<button (click)="toggleStock()" mat-button>RE-STOCK</button>-->
+        <!--<button (click)="toggleFunction2()" mat-button>FUNCTION 2</button>-->
+        <!--<button mat-button>FUNCTION 3</button>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="navbarr2" fxFlex="25%" fxShow.xs="true"-->
+        <!--fxShow.lg="false">-->
+        <!--<div fxLayout="column"-->
+        <!--fxFill>-->
+        <!--<button mat-button [matMenuTriggerFor]="menu">Menu</button>-->
+        <!--<mat-menu #menu="matMenu">-->
+
+        <!--<button  mat-menu-item>RE-STOCK</button>-->
+        <!--<button mat-menu-item>FUNCTION 2</button>-->
+        <!--<button mat-menu-item>FUNCTION 3</button>-->
+        <!--</mat-menu>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div *ngIf="isStock" fxFlex="75%">1-->
+        <!--<app-checkout-view-customer></app-checkout-view-customer>-->
+        <!--</div>-->
+        <!--<div *ngIf="isFun2" fxFlex="75%">2-->
+        <!--<app-checkout-view-customer></app-checkout-view-customer>-->
+        <!--</div>-->
+        <!--</div>-->
+
+    </div>
 </div>
+
+

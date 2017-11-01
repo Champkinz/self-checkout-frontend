@@ -1,0 +1,11 @@
+.input-container{
+    margin-left: 2%;
+}
+
+.example-container {
+}
+
+.input-container mat-form-field{
+    width:500px;
+}
+

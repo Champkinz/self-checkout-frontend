@@ -4,9 +4,9 @@
     <form (submit)="loginUser($event)" class="example-form">
         <mat-form-field class="example-full-width">
             <span matPrefix>+94 &nbsp;</span>
-            <input type="text" autofocus="autofocus" matInput placeholder="Telephone">
+            <input type="text" autofocus="autofocus" matInput placeholder="Telephone" required>
         </mat-form-field>
-            <h4 class="redfn">{{errorphone}}</h4>
+        <h4 class="redfn">{{errorphone}}</h4>
         <button mat-raised-button color="accent">LOGIN</button>
     </form>
     <!--<div *ngFor="let userdetes of userdetes">-->
