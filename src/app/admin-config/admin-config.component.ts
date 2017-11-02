@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {weightTolerate} from "../data/weightTolerate";
+import {AdminConfigService} from "../services/admin-config.service";
 
 @Component({
     selector: 'app-admin-config',
@@ -11,7 +12,7 @@ export class AdminConfigComponent implements OnInit {
     weightTldata: weightTolerate[];
     data: weightTolerate[];
 
-    constructor() {
+    constructor(private config:AdminConfigService) {
     }
 
     ngOnInit() {
@@ -36,6 +37,7 @@ export class AdminConfigComponent implements OnInit {
         ];
         this.weightTldata = arr;
         console.log(this.weightTldata);
+        this.config.sendAdminConfig(this.weightTldata);
     }
 
 }

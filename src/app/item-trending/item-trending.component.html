@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th>Item Code</th>
+        <th>Item Name</th>
+        <th>Item Category</th>
+        <th>Item Count</th>
+    </tr>
+    <div *ngFor="let trend of trend">
+        <tr>
+            <td>{{trend.itemcode}}</td>
+            <td>{{trend.itemname}}</td>
+            <td>{{trend.itemcatergory}}</td>
+            <td>{{trend.itemcount}}</td>
+        </tr>
+    </div>
+</table>

@@ -35,6 +35,11 @@ import { WeightScaleComponent } from './weight-scale/weight-scale.component';
 import {MatTabsModule} from '@angular/material';
 import { AdminConfigComponent } from './admin-config/admin-config.component';
 import {WeightTolerateService} from "./services/weight-tolerate.service";
+import { ItemTrendingComponent } from './item-trending/item-trending.component';
+import {AdminConfigService} from "./services/admin-config.service";
+import {ItemBaseService} from "./services/item-base.service";
+import { BrandTrendingComponent } from './brand-trending/brand-trending.component';
+import {BrandBaseService} from "./services/brand-base.service";
 
 
 @NgModule({
@@ -47,7 +52,9 @@ import {WeightTolerateService} from "./services/weight-tolerate.service";
         SmthComponent,
         BillRecieptComponent,
         WeightScaleComponent,
-        AdminConfigComponent
+        AdminConfigComponent,
+        ItemTrendingComponent,
+        BrandTrendingComponent
     ],
     imports: [
         MatTabsModule,
@@ -73,7 +80,7 @@ import {WeightTolerateService} from "./services/weight-tolerate.service";
         MatToolbarModule,
         AppRoutingModule,
     ],
-    providers: [BillService,LoginServiceService,CheckoutService,WeightTolerateService],
+    providers: [BillService,LoginServiceService,CheckoutService,WeightTolerateService,AdminConfigService,ItemBaseService,BrandBaseService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

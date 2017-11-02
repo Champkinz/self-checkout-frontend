@@ -8,6 +8,8 @@ import {LoginAdminViewComponent} from './login-admin-view/login-admin-view.compo
 import {AdminViewComponent} from './admin-view/admin-view.component';
 import {BillRecieptComponent} from './bill-reciept/bill-reciept.component';
 import { WeightScaleComponent } from './weight-scale/weight-scale.component';
+import {ItemTrendingComponent} from "./item-trending/item-trending.component";
+import {BrandTrendingComponent} from "./brand-trending/brand-trending.component";
 
 
 const routes: Routes = [
@@ -18,7 +20,9 @@ const routes: Routes = [
     {path: 'admin', component: AdminViewComponent},// remove at end of product
     {path: 'bill', component: BillRecieptComponent},// remove at end of product
     {path: 'weight', component: WeightScaleComponent},// remove at end of product
-    {path: 'checkout', component: CheckoutViewCustomerComponent}, // remove at end of product
+    {path: 'trending', component: ItemTrendingComponent},// remove at end of product
+    {path: 'brand', component: BrandTrendingComponent},// remove at end of product
+    {path: 'checkout', component: CheckoutViewCustomerComponent} // remove at end of product
 
 
     // otherwise redirect to 404
