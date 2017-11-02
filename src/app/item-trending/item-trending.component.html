@@ -1,16 +1,33 @@
-<table>
-    <tr>
-        <th>Item Code</th>
-        <th>Item Name</th>
-        <th>Item Category</th>
-        <th>Item Count</th>
-    </tr>
-    <div *ngFor="let trend of trend">
+
+    <form (submit)="goto($event)">
+        <div class="container" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="10px">
+            <div fxFlex="10">
+                <h4>Select Start Date:</h4>
+                <input type="date" name="startDate"/>
+            </div>
+            <div fxFlex="10">
+                <h4>Select End Date:</h4>
+                <input type="date" name="endDate"/>
+            </div>
+            <div fxFlex="10" fxLayoutAlign="start end">
+                <button mat-button mat-raised-button color="accent">PRESS</button>
+            </div>
+        </div>
+
+    </form>
+    <table style="width:100%;margin-top: 2%;">
         <tr>
-            <td>{{trend.itemcode}}</td>
-            <td>{{trend.itemname}}</td>
-            <td>{{trend.itemcatergory}}</td>
-            <td>{{trend.itemcount}}</td>
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Item Category</th>
+            <th>Item Count</th>
         </tr>
-    </div>
-</table>
+        <ng-container *ngFor="let trend of trend">
+            <tr>
+                <td>{{trend.itemcode}}</td>
+                <td>{{trend.itemname}}</td>
+                <td>{{trend.itemcatergory}}</td>
+                <td>{{trend.itemcount}}</td>
+            </tr>
+        </ng-container>
+    </table>

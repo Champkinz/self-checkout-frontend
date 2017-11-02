@@ -10,8 +10,8 @@ export class ItemBaseService {
       console.log('ItemBase SERVICE WORKING');
   }
 
-  getItemTrending(){
-    console.log('TRENDING ITEM');
+  getItemTrending(daterange){
+    console.log('daterangeinserve'+ daterange);
       return this.http.get(`${environment.itemtrending}`)
           .map(res => res.json());
   }
