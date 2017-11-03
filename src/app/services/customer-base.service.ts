@@ -4,22 +4,15 @@ import 'rxjs/add/operator/map';
 import {environment} from "../../environments/environment";
 
 @Injectable()
-export class ItemBaseService {
+export class CustomerBaseService {
 
   constructor(public http: Http) {
       console.log('ItemBase SERVICE WORKING');
   }
 
-  getItemTrending(daterange){
-    console.log('daterangeinserve'+ daterange);
-      return this.http.get(`${environment.itemtrending}`)
-          .map(res => res.json());
-  }
-
-  getBrandTrending(daterange){
+  getCustomerSuggestion(daterange) {
       console.log('daterangeinserve'+ daterange);
-      return this.http.get(`${environment.brandtrending}`)
+      return this.http.get(`${environment.customersuggestion}`)
           .map(res => res.json());
   }
-
 }

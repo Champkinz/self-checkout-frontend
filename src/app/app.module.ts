@@ -40,6 +40,9 @@ import {AdminConfigService} from "./services/admin-config.service";
 import {ItemBaseService} from "./services/item-base.service";
 import { BrandTrendingComponent } from './brand-trending/brand-trending.component';
 import {BrandBaseService} from "./services/brand-base.service";
+import { CustomerSuggestionComponent } from './customer-suggestion/customer-suggestion.component';
+import {CustomerBaseService} from "./services/customer-base.service";
+import { OptimalOrderQtyComponent } from './optimal-order-qty/optimal-order-qty.component';
 
 
 @NgModule({
@@ -54,7 +57,9 @@ import {BrandBaseService} from "./services/brand-base.service";
         WeightScaleComponent,
         AdminConfigComponent,
         ItemTrendingComponent,
-        BrandTrendingComponent
+        BrandTrendingComponent,
+        CustomerSuggestionComponent,
+        OptimalOrderQtyComponent
     ],
     imports: [
         MatTabsModule,
@@ -80,7 +85,14 @@ import {BrandBaseService} from "./services/brand-base.service";
         MatToolbarModule,
         AppRoutingModule,
     ],
-    providers: [BillService,LoginServiceService,CheckoutService,WeightTolerateService,AdminConfigService,ItemBaseService,BrandBaseService],
+    providers: [BillService,
+        LoginServiceService,
+        CheckoutService,
+        WeightTolerateService,
+        AdminConfigService,
+        ItemBaseService,
+        BrandBaseService,
+        CustomerBaseService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

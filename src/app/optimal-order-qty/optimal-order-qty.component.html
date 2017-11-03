@@ -17,13 +17,14 @@
 </form>
 <table style="width:100%;margin-top: 2%;">
   <tr>
-    <th>Brand Name</th>
-    <th>Brand Quantity Sold</th>
+    <th>Month</th>
+    <th>Quantity Sold</th>
+    <th>Selling Rate (in units)</th>
   </tr>
   <ng-container *ngFor="let brandtrend of brandtrend">
     <tr>
-      <td>{{brandtrend.brandname}}</td>
-      <td>{{brandtrend.brandqty}}</td>
+      <!--<td>{{brandtrend.brandname}}</td>-->
+      <!--<td>{{brandtrend.brandqty}}</td>-->
     </tr>
   </ng-container>
 </table>

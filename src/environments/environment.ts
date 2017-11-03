@@ -10,5 +10,7 @@ export const environment = {
     // http://localhost:3100/ranges
     producturl : 'http://demo4262934.mockable.io/products',
     weighturl : 'http://demo4262934.mockable.io/weight',
-    itemtrending : 'http://demo4262934.mockable.io/trending'
+    itemtrending : 'http://demo4262934.mockable.io/trending',
+    brandtrending : 'http://demo4262934.mockable.io/brandtrending',
+    customersuggestion : 'http://demo4262934.mockable.io/customersuggestion'
 };

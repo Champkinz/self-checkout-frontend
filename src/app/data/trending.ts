@@ -9,3 +9,8 @@ export  class dateStruct{
     startDate:string;
     endDate:string;
 }
+
+export class BrandTrend{
+    brandname:string;
+    brandqty:string;
+}

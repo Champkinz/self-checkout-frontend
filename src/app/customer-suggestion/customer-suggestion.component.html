@@ -17,13 +17,17 @@
 </form>
 <table style="width:100%;margin-top: 2%;">
   <tr>
-    <th>Brand Name</th>
-    <th>Brand Quantity Sold</th>
+    <th>Customer Phone Number</th>
+    <th>Customer Favourite Category</th>
+    <th>Customer Favourite Week</th>
+    <th>Customer Suggesting Item</th>
   </tr>
-  <ng-container *ngFor="let brandtrend of brandtrend">
+  <ng-container *ngFor="let customers of customers">
     <tr>
-      <td>{{brandtrend.brandname}}</td>
-      <td>{{brandtrend.brandqty}}</td>
+      <td>{{customers.customerphone}}</td>
+      <td>{{customers.customerfavcatergory}}</td>
+      <td>{{customers.customerfavweek}}</td>
+      <td>{{customers.trendingsuggestitem}}</td>
     </tr>
   </ng-container>
 </table>

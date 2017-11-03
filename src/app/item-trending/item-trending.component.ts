@@ -13,7 +13,7 @@ export class ItemTrendingComponent implements OnInit {
     dates:dateStruct[];
     trend: trending[];
 
-    constructor(private trending: ItemBaseService) {
+    constructor(private btrending: ItemBaseService) {
     }
 
     ngOnInit() {
@@ -29,7 +29,7 @@ export class ItemTrendingComponent implements OnInit {
         var datez =[{startDate:sdate,endDate:edate}];
         this.dates = datez;
         // console.log(this.dates);
-        this.trending.getItemTrending(JSON.stringify(this.dates)).subscribe((trending) => {
+        this.btrending.getItemTrending(JSON.stringify(this.dates)).subscribe((trending) => {
             this.trend = trending;
             console.log(this.trend);
         });
