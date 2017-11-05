@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {dateStruct, BrandTrend} from "../data/trending";
-import {ItemBaseService} from "../services/item-base.service";
+import {BrandBaseService} from "../services/brand-base.service";
 
 @Component({
     selector: 'app-brand-trending',
@@ -11,7 +11,7 @@ export class BrandTrendingComponent implements OnInit {
     dates: dateStruct[];
     brandtrend: BrandTrend[];
 
-    constructor(private brandtrending:ItemBaseService) {
+    constructor(private brandtrending:BrandBaseService) {
     }
 
     ngOnInit() {
@@ -24,7 +24,7 @@ export class BrandTrendingComponent implements OnInit {
 
         var datez = [{startDate: sdate, endDate: edate}];
         this.dates = datez;
-        this.brandtrending.getBrandTrending(JSON.stringify(this.dates)).subscribe((brandtrend) => {
+        this.brandtrending.getbrandtrending(JSON.stringify(this.dates)).subscribe((brandtrend) => {
             this.brandtrend = brandtrend;
             console.log(this.brandtrend);
         });

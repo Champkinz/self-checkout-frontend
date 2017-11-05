@@ -10,6 +10,12 @@ export  class dateStruct{
     endDate:string;
 }
 
+export class iteminfo{
+    startDate:string;
+    endDate:string;
+    itemcode:string;
+}
+
 export class BrandTrend{
     brandname:string;
     brandqty:string;

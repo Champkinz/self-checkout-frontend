@@ -112,6 +112,7 @@ export class CheckoutViewCustomerComponent implements OnInit {
         this.checkoutservice.sendBillDetails(arr);
         this.router.navigate(['weight']);
         localStorage.setItem('checkoutorder',JSON.stringify(data));
+        return 'done';
     }
 
     deleteitem(itemCode: string): any {

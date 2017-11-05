@@ -10,6 +10,7 @@ import {BillRecieptComponent} from './bill-reciept/bill-reciept.component';
 import { WeightScaleComponent } from './weight-scale/weight-scale.component';
 import {ItemTrendingComponent} from "./item-trending/item-trending.component";
 import {BrandTrendingComponent} from "./brand-trending/brand-trending.component";
+import {OptimalOrderQtyComponent} from "./optimal-order-qty/optimal-order-qty.component";
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path: 'weight', component: WeightScaleComponent},// remove at end of product
     {path: 'trending', component: ItemTrendingComponent},// remove at end of product
     {path: 'brand', component: BrandTrendingComponent},// remove at end of product
+    {path: 'optimalorderqty', component: OptimalOrderQtyComponent},// remove at end of product
     {path: 'checkout', component: CheckoutViewCustomerComponent} // remove at end of product
 
 

@@ -25,7 +25,11 @@ export class LoginCustomerViewComponent implements OnInit {
 
     }
 
+
+
     loginUser(e) {
+        var t0 = performance.now();
+
         // e.preventDefault();
         // console.log(e);
         // var phonenumber = e.target.elements[0].value;
@@ -47,8 +51,11 @@ export class LoginCustomerViewComponent implements OnInit {
                 console.log(val);
                 localStorage.setItem("phonenumber",val);
                 this.router.navigate(['checkout']);
+                var t1 = performance.now();
+                console.log("Call to loginUser took " + (t1 - t0) + " milliseconds.")
             }
         });
+
     }
 
 

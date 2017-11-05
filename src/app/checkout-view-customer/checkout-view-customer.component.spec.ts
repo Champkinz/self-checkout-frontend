@@ -22,4 +22,6 @@ describe('CheckoutViewCustomerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
 });

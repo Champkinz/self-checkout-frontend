@@ -12,5 +12,7 @@ export const environment = {
     weighturl : 'http://demo4262934.mockable.io/weight',
     itemtrending : 'http://demo4262934.mockable.io/trending',
     brandtrending : 'http://demo4262934.mockable.io/brandtrending',
-    customersuggestion : 'http://demo4262934.mockable.io/customersuggestion'
+    customersuggestion : 'http://demo4262934.mockable.io/customersuggestion',
+    optimalorderqty : 'http://demo4262934.mockable.io/optimalqty',
+    iteminfo : 'http://demo4262934.mockable.io/products/'
 };

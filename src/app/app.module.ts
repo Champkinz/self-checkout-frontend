@@ -43,6 +43,8 @@ import {BrandBaseService} from "./services/brand-base.service";
 import { CustomerSuggestionComponent } from './customer-suggestion/customer-suggestion.component';
 import {CustomerBaseService} from "./services/customer-base.service";
 import { OptimalOrderQtyComponent } from './optimal-order-qty/optimal-order-qty.component';
+import {OptimalQtyService} from "./services/optimal-qty.service";
+import { ItemInfoComponent } from './item-info/item-info.component';
 
 
 @NgModule({
@@ -59,7 +61,8 @@ import { OptimalOrderQtyComponent } from './optimal-order-qty/optimal-order-qty.
         ItemTrendingComponent,
         BrandTrendingComponent,
         CustomerSuggestionComponent,
-        OptimalOrderQtyComponent
+        OptimalOrderQtyComponent,
+        ItemInfoComponent
     ],
     imports: [
         MatTabsModule,
@@ -92,7 +95,8 @@ import { OptimalOrderQtyComponent } from './optimal-order-qty/optimal-order-qty.
         AdminConfigService,
         ItemBaseService,
         BrandBaseService,
-        CustomerBaseService],
+        CustomerBaseService,
+        OptimalQtyService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -9,6 +9,10 @@
       <h4>Select End Date:</h4>
       <input type="date" name="endDate"/>
     </div>
+    <div fxFlex="10">
+      <h4>Enter Item Code:</h4>
+      <input type="text" name="itemcode"/>
+    </div>
     <div fxFlex="10" fxLayoutAlign="start end">
       <button mat-button mat-raised-button color="accent">PRESS</button>
     </div>
@@ -17,18 +21,17 @@
 </form>
 <table style="width:100%;margin-top: 2%;">
   <tr>
-    <th>Month</th>
-    <th>Quantity Sold</th>
-    <th>Selling Rate (in units)</th>
+    <th>Item Code</th>
+    <th>Item Name</th>
+    <th>Item Category</th>
+    <th>Item Count</th>
   </tr>
-  <ng-container *ngFor="let disdata of disdata">
+  <ng-container *ngFor="let trend of trend">
     <tr>
-      <td>{{disdata.month}}</td>
-      <td>{{disdata.qtysold}}</td>
-      <td>{{disdata.sellingrate}}</td>
+      <td>{{trend.itemcode}}</td>
+      <td>{{trend.itemname}}</td>
+      <td>{{trend.itemcatergory}}</td>
+      <td>{{trend.itemcount}}</td>
     </tr>
   </ng-container>
 </table>
-<h4>Total Increment for given date range : {{increment}}
-</h4>
-<h4>Total Decrement for given date range : {{decrement}}</h4>

@@ -53,6 +53,7 @@ export class WeightScaleComponent implements OnInit {
             this.checktolerance(minweight,maxweight,maxtolweight,mintolweight,weightscalevalue,actualweight);
         });
         console.log(minweight);
+        return 'done';
 
 
 
@@ -89,6 +90,7 @@ export class WeightScaleComponent implements OnInit {
         }else {
             this.helpcustomer = 'wait for assistant help';
         }
+        return 'done';
         // var findperforgvnrange = tolerateweightforthegivenrange/givenrangemaxval * 100;
         // testing purposes
         // findperforgvnrange = Math.round(findperforgvnrange);

@@ -16,9 +16,9 @@ export class ItemBaseService {
           .map(res => res.json());
   }
 
-  getBrandTrending(daterange){
-      console.log('daterangeinserve'+ daterange);
-      return this.http.get(`${environment.brandtrending}`)
+  getItemInformation(daterange, itemcode) {
+      console.log('details in service'+ daterange, itemcode);
+      return this.http.get(`${environment.iteminfo}` + itemcode)
           .map(res => res.json());
   }
 

@@ -10,9 +10,9 @@ export class BrandBaseService {
       console.log('AdminConfig SERVICE WORKING');
   }
 
-    getbrandtrending(){
-        console.log('TRENDING brand');
-        return this.http.get(`${environment.itemtrending}`)
+    getbrandtrending(daterange){
+        console.log('Brand Date Range'+ daterange);
+        return this.http.get(`${environment.brandtrending}`)
             .map(res => res.json());
     }
 

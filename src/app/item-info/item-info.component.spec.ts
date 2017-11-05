@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeightScaleComponent } from './weight-scale.component';
+import { ItemInfoComponent } from './item-info.component';
 
-describe('WeightScaleComponent', () => {
-  let component: WeightScaleComponent;
-  let fixture: ComponentFixture<WeightScaleComponent>;
+describe('ItemInfoComponent', () => {
+  let component: ItemInfoComponent;
+  let fixture: ComponentFixture<ItemInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WeightScaleComponent ]
+      declarations: [ ItemInfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WeightScaleComponent);
+    fixture = TestBed.createComponent(ItemInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,5 +22,4 @@ describe('WeightScaleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });
