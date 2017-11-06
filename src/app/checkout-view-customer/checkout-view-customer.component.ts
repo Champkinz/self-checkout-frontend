@@ -32,12 +32,23 @@ export class CheckoutViewCustomerComponent implements OnInit {
 
     onClickItem(itemCode) {
         itemCode.preventDefault();
-        this.sampleData(itemCode.target.elements[0].value);
-        console.log(itemCode.target.elements[0].value);
+        console.log('entered code'+itemCode.target.elements[0].value);
+        var gt = itemCode.target.elements[0].value;
+        // var tt = gt.substr(0,tt);
+        // console.log('custff string'+tt);
+        var tt = gt.indexOf('00');
+        var hex = gt.substr(0,tt);
+        var qty:number = gt.substr(tt+1);
+        if(gt.includes('00')){
+            console.log(hex);
+            this.sampleData(hex,qty);
+        }else{
+            this.sampleData(gt,null);
+        }
     }
 
 
-    sampleData(itemCode: string): any {
+    sampleData(itemCode: string,qty:number): any {
         this.checkoutservice.getProductDetails(itemCode).subscribe((products) => {
             this.elementz = products;
             console.log("products " + JSON.stringify(products));
@@ -46,12 +57,21 @@ export class CheckoutViewCustomerComponent implements OnInit {
             for (let res of this.elementz) {
                 console.log("code is " + res.code);
 
-                if (res.code == itemCode) {
-                    console.log("code ok " + res.code);
-                    value = res;
-                    data.push(value);
-                    this.dataSource = new ExampleDataSource();
-                }
+                    if(qty == null){
+                        console.log("code ok " + res.code);
+                        value = res;
+                        data.push(value);
+                        this.dataSource = new ExampleDataSource();
+                    }else {
+                        console.log("code ok " + res.code);
+                        var realprice = +res.price * qty;
+                        res.price =realprice.toString();
+                        value = res;
+                        data.push(value);
+                        this.dataSource = new ExampleDataSource();
+                    }
+
+
             }
         });
     }
@@ -95,21 +115,26 @@ export class CheckoutViewCustomerComponent implements OnInit {
         //}
 
         let temparr=[];
+        var tempp;
         for (let res of data){
-            temparr.push(res.code);
+            tempp = {product_id:res.code, name:res.name, category:res.category,brand:"Local"};
+            temparr.push(tempp);
         }
-        // console.log(temparr);
+         console.log('temprr'+JSON.stringify(temparr));
 
         // type billdetails = Array<{ phonenumber: string, products:[] , quantity: number, date: string }>;
-        var arr = [
+        var arr =
             {
-                phoneumber: localStorage.getItem("phonenumber"),
-                products: [],
-                date :today
-            }];
-        arr[0].products = temparr;
-        // console.log(arr);
-        this.checkoutservice.sendBillDetails(arr);
+                mobile: localStorage.getItem("phonenumber"),
+                date :today,
+                product: [{"product_id":"","name":"","category":"","brand":""}],
+            };
+        console.log('arr eka:' + JSON.stringify(arr));
+        arr.product = temparr;
+        this.checkoutservice.sendBillDetails(arr).subscribe(
+            (ar) => console.log(ar)
+        );
+
         this.router.navigate(['weight']);
         localStorage.setItem('checkoutorder',JSON.stringify(data));
         return 'done';

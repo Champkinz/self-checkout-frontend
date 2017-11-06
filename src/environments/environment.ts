@@ -8,7 +8,9 @@ export const environment = {
     // http://localhost:3100/products/A123
     // http://localhost:3100/customers/0777123456
     // http://localhost:3100/ranges
-    producturl : 'http://demo4262934.mockable.io/products',
+    customerurl : 'http://localhost:3100/customers/',
+    producturl : 'http://localhost:3100/products/',
+    checkouturl : 'http://localhost:3100/checkout',
     weighturl : 'http://demo4262934.mockable.io/weight',
     itemtrending : 'http://demo4262934.mockable.io/trending',
     brandtrending : 'http://demo4262934.mockable.io/brandtrending',

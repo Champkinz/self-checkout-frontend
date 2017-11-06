@@ -25,8 +25,6 @@ export class LoginCustomerViewComponent implements OnInit {
 
     }
 
-
-
     loginUser(e) {
         var t0 = performance.now();
 
@@ -46,7 +44,7 @@ export class LoginCustomerViewComponent implements OnInit {
                 this.errorphone = 'Please Re-Enter The Phone Number';
             }else {
                 let val:string;
-                val = users[0].phone;
+                val = users[0].mobile;
                 console.log('loginarea');
                 console.log(val);
                 localStorage.setItem("phonenumber",val);
@@ -55,11 +53,7 @@ export class LoginCustomerViewComponent implements OnInit {
                 console.log("Call to loginUser took " + (t1 - t0) + " milliseconds.")
             }
         });
-
     }
-
-
-
 
 }
 
